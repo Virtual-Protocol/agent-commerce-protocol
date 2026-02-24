@@ -1,0 +1,68 @@
+[profile.default]
+src = "contracts/acp"
+out = "out"
+libs = [
+    "lib",
+    "node_modules",
+]
+solc_version = "0.8.30"
+via_ir = true
+optimizer = true
+optimizer_runs = 200
+evm_version = "cancun"
+ast = true
+build_info = true
+extra_output = ["storageLayout"]
+
+# Allow scripts to read network config files and compiled artifacts (for upgrades)
+fs_permissions = [
+    { access = "read", path = "script/networks" },
+    { access = "read", path = "out" }
+]
+
+remappings = [
+    "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+    "@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/",
+    "hardhat/=node_modules/hardhat/",
+    "@layerzerolabs/oapp-evm/=lib/devtools/packages/oapp-evm/",
+    "@layerzerolabs/oapp-evm-upgradeable/=lib/devtools/packages/oapp-evm-upgradeable/",
+    "@layerzerolabs/lz-evm-protocol-v2/=lib/LayerZero-v2/packages/layerzero-v2/evm/protocol/",
+    "@layerzerolabs/lz-evm-messagelib-v2/=lib/LayerZero-v2/packages/layerzero-v2/evm/messagelib/",
+    "forge-std/=lib/forge-std/src/",
+    "openzeppelin-foundry-upgrades/=lib/openzeppelin-foundry-upgrades/src/",
+    "solidity-bytes-utils/=lib/solidity-bytes-utils/",
+]
+
+# RPC endpoints for deployment
+[rpc_endpoints]
+# Mainnets
+ethereum = "${ETH_RPC_URL}"
+base = "${BASE_RPC_URL}"
+polygon = "${POLYGON_RPC_URL}"
+arbitrum = "${ARBITRUM_RPC_URL}"
+bnb = "${BNB_RPC_URL}"
+
+# Testnets
+eth_sepolia = "${ETH_SEPOLIA_RPC_URL}"
+base_sepolia = "${BASE_SEPOLIA_RPC_URL}"
+polygon_amoy = "${POLYGON_AMOY_RPC_URL}"
+arbitrum_sepolia = "${ARBITRUM_SEPOLIA_RPC_URL}"
+bnb_testnet = "${BNB_TESTNET_RPC_URL}"
+
+# Etherscan API keys for verification
+[etherscan]
+# Mainnets
+ethereum = { key = "${ETHERSCAN_API_KEY}", url = "https://api.etherscan.io/api" }
+base = { key = "${BASESCAN_API_KEY}", url = "https://api.basescan.org/api" }
+polygon = { key = "${POLYGONSCAN_API_KEY}", url = "https://api.polygonscan.com/api" }
+arbitrum = { key = "${ARBISCAN_API_KEY}", url = "https://api.arbiscan.io/api" }
+bnb = { key = "${BSCSCAN_API_KEY}", url = "https://api.bscscan.com/api" }
+
+# Testnets
+eth_sepolia = { key = "${ETHERSCAN_API_KEY}", url = "https://api-sepolia.etherscan.io/api" }
+base_sepolia = { key = "${BASESCAN_API_KEY}", url = "https://api-sepolia.basescan.org/api" }
+polygon_amoy = { key = "${POLYGONSCAN_API_KEY}", url = "https://api-amoy.polygonscan.com/api" }
+arbitrum_sepolia = { key = "${ARBISCAN_API_KEY}", url = "https://api-sepolia.arbiscan.io/api" }
+bnb_testnet = { key = "${BSCSCAN_API_KEY}", url = "https://api-testnet.bscscan.com/api" }
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

@@ -1,0 +1,120 @@
+{
+  "description": "Testnet network configuration for Transfer Service (directional mode: Base ↔ other chains)",
+  "networks": [
+    {
+      "name": "Base Sepolia",
+      "chainId": 84532,
+      "eid": 40245,
+      "rpcUrl": "<TODO>",
+      "explorerSlug": "base-sepolia",
+      "sendLib": "0xC1868e054425D378095A003EcbA3823a5D0135C9",
+      "receiveLib": "0x12523de19dc41c91F7d2093E0CFbB76b17012C8d",
+      "executor": "0x8A3D588D9f6AC041476b094f97FF94ec30169d3D",
+      "confirmations": 1,
+      "requiredDVNCount": 1,
+      "optionalDVNCount": 0,
+      "optionalDVNThreshold": 0,
+      "requiredDVNs": [
+        "0xe1a12515f9ab2764b887bf60b923ca494ebbb2d6"
+      ],
+      "optionalDVNs": [
+      ],
+      "dvnNames": {
+        "required": ["LayerZero Labs"],
+        "optional": []
+      }
+    },
+    {
+      "name": "Ethereum Sepolia",
+      "chainId": 11155111,
+      "eid": 40161,
+      "rpcUrl": "<TODO>",
+      "explorerSlug": "sepolia",
+      "sendLib": "0xcc1ae8Cf5D3904Cef3360A9532B477529b177cCE",
+      "receiveLib": "0xdAf00F5eE2158dD58E0d3857851c432E34A3A851",
+      "executor": "0x718B92b5CB0a5552039B593faF724D182A881eDA",
+      "confirmations": 1,
+      "requiredDVNCount": 1,
+      "optionalDVNCount": 0,
+      "optionalDVNThreshold": 0,
+      "requiredDVNs": [
+        "0x8eebf8b423b73bfca51a1db4b7354aa0bfca9193"
+      ],
+      "optionalDVNs": [
+      ],
+      "dvnNames": {
+        "required": ["LayerZero Labs"],
+        "optional": []
+      }
+    },
+    {
+      "name": "Arbitrum Sepolia",
+      "chainId": 421614,
+      "eid": 40231,
+      "rpcUrl": "<TODO>",
+      "explorerSlug": "arbitrum-sepolia",
+      "sendLib": "0x4f7cd4DA19ABB31b0eC98b9066B9e857B1bf9C0E",
+      "receiveLib": "0x75Db67CDab2824970131D5aa9CECfC9F69c69636",
+      "executor": "0x5Df3a1cEbBD9c8BA7F8dF51Fd632A9aef8308897",
+      "confirmations": 1,
+      "requiredDVNCount": 1,
+      "optionalDVNCount": 0,
+      "optionalDVNThreshold": 0,
+      "requiredDVNs": [
+        "0x53f488e93b4f1b60e8e83aa374dbe1780a1ee8a8"
+      ],
+      "optionalDVNs": [
+      ],
+      "dvnNames": {
+        "required": ["LayerZero Labs"],
+        "optional": []
+      }
+    },
+    {
+      "name": "BNB Testnet",
+      "chainId": 97,
+      "eid": 40102,
+      "rpcUrl": "<TODO>",
+      "explorerSlug": "bsc-testnet",
+      "sendLib": "0x55f16c442907e86D764AFdc2a07C2de3BdAc8BB7",
+      "receiveLib": "0x188d4bbCeD671A7aA2b5055937F79510A32e9683",
+      "executor": "0x31894b190a8bAbd9A067Ce59fde0BfCFD2B18470",
+      "confirmations": 1,
+      "requiredDVNCount": 1,
+      "optionalDVNCount": 0,
+      "optionalDVNThreshold": 0,
+      "requiredDVNs": [
+        "0x0ee552262f7b562efced6dd4a7e2878ab897d405"
+      ],
+      "optionalDVNs": [
+      ],
+      "dvnNames": {
+        "required": ["LayerZero Labs"],
+        "optional": []
+      }
+    },
+    {
+      "name": "Polygon Amoy",
+      "chainId": 80002,
+      "eid": 40267,
+      "rpcUrl": "<TODO>",
+      "explorerSlug": "polygon-amoy",
+      "sendLib": "0x1d186C560281B8F1AF831957ED5047fD3AB902F9",
+      "receiveLib": "0x53fd4C4fBBd53F6bC58CaE6704b92dB1f360A648",
+      "executor": "0x4Cf1B3Fa61465c2c907f82fC488B43223BA0CF93",
+      "confirmations": 1,
+      "requiredDVNCount": 1,
+      "optionalDVNCount": 0,
+      "optionalDVNThreshold": 0,
+      "requiredDVNs": [
+        "0x55c175dd5b039331db251424538169d8495c18d1"
+      ],
+      "optionalDVNs": [
+      ],
+      "dvnNames": {
+        "required": ["LayerZero Labs"],
+        "optional": []
+      }
+    }
+  ]
+}
