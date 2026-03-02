@@ -229,6 +229,8 @@ contract ACPSimple is Initializable, AccessControlUpgradeable, InteractionLedger
             return;
         }
         uint8 oldPhase = job.phase;
+        require(canProgressToPhase(oldPhase, phase), "Invalid phase transition");
+
         job.phase = phase;
         emit JobPhaseUpdated(jobId, oldPhase, phase);
 
@@ -670,5 +672,23 @@ contract ACPSimple is Initializable, AccessControlUpgradeable, InteractionLedger
     function setX402PaymentToken(address x402PaymentTokenAddress) external onlyRole(ADMIN_ROLE) {
         require(x402PaymentTokenAddress != address(0), "Zero address x402 payment token");
         x402PaymentToken = IERC20(x402PaymentTokenAddress);
+    }
+
+    function canProgressToPhase(uint8 current, uint8 target) internal pure returns (bool) {
+        if (target == PHASE_REJECTED || target == PHASE_EXPIRED) {
+            return true; // Can always reject or expire
+        }
+        
+        if (current == PHASE_REQUEST) {
+            return target == PHASE_NEGOTIATION || target == PHASE_TRANSACTION;
+        } else if (current == PHASE_NEGOTIATION) {
+            return target == PHASE_TRANSACTION;
+        } else if (current == PHASE_TRANSACTION) {
+            return target == PHASE_EVALUATION;
+        } else if (current == PHASE_EVALUATION) {
+            return target == PHASE_COMPLETED;
+        }
+        
+        return false;
     }
 }
